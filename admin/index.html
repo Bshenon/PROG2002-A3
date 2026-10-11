@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charity Events - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="admin.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h2>Charity Events Admin</h2>
+            <div>
+                <a href="#dashboard">Dashboard</a>
+                <a href="#events">All Events</a>
+                <a href="#editor" id="navAdd">Add Event</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="dashboard">
+
+        <!-- Dashboard Heading -->
+        <section class="dashboard-header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <p>Manage charity events and registrations.</p>
+            </div>
+
+            <button id="addBtn">+ Add New Event</button>
+        </section>
+
+        <!-- Dashboard Statistics -->
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Events</h3>
+                <p id="totalCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Active Events</h3>
+                <p id="activeCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Past Events</h3>
+                <p id="pastCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Suspended Events</h3>
+                <p id="suspendedCount">0</p>
+            </div>
+        </section>
+
+        <!-- Success and Error Messages -->
+        <div id="message" role="status" aria-live="polite" hidden></div>
+
+        <!-- All Events -->
+        <section id="events" class="panel">
+            <div class="section-heading">
+                <h2>All Events</h2>
+                <button id="refreshBtn">Refresh Events</button>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event ID</th>
+                            <th>Event Name</th>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="eventsBody">
+                        <tr>
+                            <td colspan="6">Loading events...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Add and Edit Event -->
+        <section id="editor" class="panel" hidden>
+
+            <div class="section-heading">
+                <h2 id="formTitle">Add New Event</h2>
+                <button id="cancelBtn" type="button">Cancel</button>
+            </div>
+
+            <form id="eventForm">
+
+                <div class="form-grid">
+
+                    <label>
+                        Event Name *
+                        <input type="text" name="event_name" required>
+                    </label>
+
+                    <label>
+                        Organisation *
+                        <select name="organisation_id"
+                                id="organisationSelect" required>
+                            <option value="">Select Organisation</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Category *
+                        <select name="category_id"
+                                id="categorySelect" required>
+                            <option value="">Select Category</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Event Date *
+                        <input type="date" name="event_date" required>
+                    </label>
+
+                    <label>
+                        Event Time *
+                        <input type="time" name="event_time" required>
+                    </label>
+
+                    <label>
+                        Location *
+                        <input type="text" name="location" required>
+                    </label>
+
+                    <label>
+                        Ticket Price *
+                        <input type="number" name="ticket_price"
+                               min="0" step="0.01" required>
+                    </label>
+
+                    <label>
+                        Fundraising Goal *
+                        <input type="number" name="fundraising_goal"
+                               min="0" step="0.01" required>
+                    </label>
+
+                    <label>
+                        Fundraising Progress *
+                        <input type="number" name="fundraising_progress"
+                               min="0" step="0.01" required>
+                    </label>
+
+                    <label>
+                        Event Status *
+                        <select name="status" required>
+                            <option value="Active">Active</option>
+                            <option value="Past">Past</option>
+                            <option value="Suspended">Suspended</option>
+                        </select>
+                    </label>
+
+                    <label class="full-width">
+                        Purpose *
+                        <input type="text" name="purpose" required>
+                    </label>
+
+                    <label class="full-width">
+                        Description *
+                        <textarea name="description"
+                                  rows="4" required></textarea>
+                    </label>
+
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" id="saveBtn">
+                        Save Event
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Registrations for selected event -->
+            <section id="registrationsPanel" hidden>
+
+                <h2>Event Registrations</h2>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Registrant Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Tickets</th>
+                                <th>Registration Date</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="registrationsBody">
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Charity Events Management System | PROG2002</p>
+    </footer>
+
+</body>
+</html>
