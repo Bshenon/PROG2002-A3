@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details | Himalayan Hearts Foundation</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Himalayan Hearts Foundation</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="search.html">Search Events</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="event-details-section">
+            <div class="container">
+                <div id="event-message" role="status">
+                    Loading event...
+                </div>
+
+                <div id="event-details"></div>
+
+                <div id="registration-section"
+                     class="registration-section" hidden>
+
+                    <h2>Register Your Interest</h2>
+
+                    <form id="registration-form">
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text"
+                                   id="register-name"
+                                   maxlength="150"
+                                   autocomplete="name"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email"
+                                   id="register-email"
+                                   autocomplete="email"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-phone">Phone Number</label>
+                            <input type="tel"
+                                   id="register-phone"
+                                   autocomplete="tel"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="register-tickets">
+                                Number of Tickets
+                            </label>
+                            <input type="number"
+                                   id="register-tickets"
+                                   min="1"
+                                   step="1"
+                                   value="1"
+                                   required>
+                        </div>
+
+                        <button type="submit" class="button"
+                                id="register-button">
+                            Register
+                        </button>
+
+                        <p id="registration-message"
+                           role="status"
+                           aria-live="polite"></p>
+                    </form>
+
+                    <section class="registrations-section"
+                             aria-labelledby="registrations-heading">
+                        <h2 id="registrations-heading">
+                            Recent Registrations
+                        </h2>
+                        <div id="registrations-list">
+                            Loading registrations...
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Himalayan Hearts Foundation</p>
+            <p>contact@himalayanhearts.org | 08 6123 4567</p>
+        </div>
+    </footer>
+
+    <script src="js/event.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #222222;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+
+
+header {
+    background-color: #8b1e2d;
+    color: white;
+    padding: 20px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+.hero {
+    background-color: #1f3a5f;
+    color: white;
+    padding: 70px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    margin-top: 0;
+    font-size: 36px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: 20px auto 30px;
+    line-height: 1.7;
+}
+
+
+
+
+.button {
+    display: inline-block;
+    background-color: #8b1e2d;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background-color: #681621;
+}
+
+
+
+
+.events-section {
+    padding: 50px 0;
+}
+
+.events-section h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.events-section > .container > p {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#events-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.event-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+}
+
+.event-card h3 {
+    margin-top: 0;
+    color: #8b1e2d;
+}
+
+.event-card p {
+    line-height: 1.5;
+}
+
+
+
+
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+}
+
+
+
+
+@media (max-width: 800px) {
+
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    #events-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h2 {
+        font-size: 28px;
+    }
+
+}.search-section {
+    padding: 50px 0;
+    min-height: 600px;
+}
+
+.search-section h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+#search-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #dddddd;
+    margin-bottom: 30px;
+}
+
+.search-fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+button.button,
+.secondary-button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.secondary-button {
+    display: inline-block;
+    background-color: #555555;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+}
+
+.secondary-button:hover {
+    background-color: #333333;
+}
+
+#message {
+    margin: 20px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+#search-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+@media (max-width: 800px) {
+
+    .search-fields {
+        grid-template-columns: 1fr;
+    }
+
+    #search-results {
+        grid-template-columns: 1fr;
+    }
+
+    .search-buttons {
+        flex-direction: column;
+    }
+
+}
+.event-details-section {
+    padding: 50px 0;
+    min-height: 600px;
+}
+
+#event-message {
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.event-detail-card {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.event-detail-card h2 {
+    color: #8b1e2d;
+    font-size: 32px;
+    margin-top: 0;
+}
+
+.event-detail-card h3 {
+    color: #1f3a5f;
+    margin-top: 25px;
+}
+
+.event-detail-card p {
+    line-height: 1.6;
+}
+
+.fundraising-box {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 25px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 20px;
+    background-color: #dddddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #8b1e2d;
+}
+
+.registration-section {
+    background-color: white;
+    padding: 30px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+}
+
+.registration-section h2 {
+    color: #1f3a5f;
+    margin-top: 0;
+}
+
+#registration-form {
+    display: grid;
+    gap: 20px;
+}
+
+#registration-form input {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#registration-form .button {
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: fit-content;
+}
