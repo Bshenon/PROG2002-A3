@@ -1,5 +1,5 @@
 
-const API_BASE = "http://localhost:3060/api";
+const API_BASE = "https://24286114.it.scu.edu.au/PROG2002-A3-api/api";
 
 const eventsBody = document.getElementById("eventsBody");
 const form = document.getElementById("eventForm");
